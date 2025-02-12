@@ -21,5 +21,8 @@ namespace ClassRoomNet60
             BirthMonth = birthMonth;
             Birthday = birthday;
         }
+
+
+
     }
 }
