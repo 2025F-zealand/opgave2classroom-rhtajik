@@ -16,6 +16,19 @@ namespace ClassRoomNet60
         {
             StudentList = new List<Student>();
         }
-    }
 
+        public void CountBirthdaysBySeason()
+        {
+            var seasonCounts = StudentList
+                .GroupBy(student => student.GetSeason())
+                .Select(group => new { Season = group.Key, Count = group.Count() })
+                .ToList();
+
+            foreach (var seasonCount in seasonCounts)
+            {
+                Console.WriteLine($"{seasonCount.Season}: {seasonCount.Count} student(s) with birthday.");
+            }
+        }
+    }
 }
+
